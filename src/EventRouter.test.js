@@ -29,12 +29,6 @@ const fetchABI = async () => {
   return abi;
 }
 
-const sleep = time => {
-  return new Promise((done)=>{
-    setTimeout(done, time);
-  })
-}
-
 describe("EventRouter", ()=>{
   it("should sync and then stream new events", done=>{
     let web3Factory = () => new Web3(new Web3.providers.HttpProvider(URL));
