@@ -1,0 +1,51 @@
+{
+  "name": "eth-event-router",
+  "version": "0.1.0",
+  "description": "Routes log events through handlers the same way express routes request/response through stack of installed handlers.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --require babel-core/register --require babel-polyfill $(find ./src -name *.test.js)",
+    "prepare": "babel ./src --out-dir ./dist --ignore '**/*.test.js' --source-maps --copy-files",
+    "build": "npm run prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buidlhub/eth-event-router.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "eth-sync"
+  ],
+  "author": "TekHedz, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buidlhub/eth-event-router/issues"
+  },
+  "homepage": "https://github.com/buidlhub/eth-event-router#readme",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.21.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-es2015-classes": "^6.18.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.1.0",
+    "fetch": "^1.1.0",
+    "mocha": "^6.1.4",
+    "web3": "^1.0.0-beta.55"
+  },
+  "dependencies": {
+    "braces": "^3.0.2",
+    "debug": "^4.1.1",
+    "eth-sync": "^0.1.6",
+    "yup": "^0.27.0"
+  }
+}
