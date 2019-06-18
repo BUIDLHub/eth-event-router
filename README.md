@@ -1,6 +1,9 @@
 # Overview
 Routes events through a stack of installed handlers similar to the way express passes request/response through a stack of handlers. Relies on eth-sync to first bring in historical events from a specified block and then continues from that point to retrieve all live events. Handlers are called for synchronized and live events so it's transparent to the handlers whether the events are live or replay.
 
+## Block vs. Log Subscriptions
+eth-event-router relies on block subscriptions vs. event subscriptions. Some versions of web3/MetaMask had leaking event subscriptions that would result in multiple event callbacks after loading a DApp several times. Infura's websocket endpoint is also experimental (as of June, 2019) leading to problems with subscriptions in general. So the router uses 15-second polling to pull in new blocks and then uses eth-sync to retrieve any new blocks since the last txn received for the app. Why not the last known block? If we receive block 7,984,830 and attempt to get log events for a DApp, Infura may not have indexed the events yet. If we just skipped that block and went on from there, we could miss data when Infura finally does index events for that block. Therefore, we always pull from the last block that contained transactions for our DApp.
+
 # Installation
 ```
 npm install eth-event-router
