@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/buidlhub/eth-event-router#readme",
   "devDependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.21.0",
     "babel-plugin-add-module-exports": "^0.2.1",
