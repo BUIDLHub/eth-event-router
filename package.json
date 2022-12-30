@@ -39,7 +39,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^5.1.0",
     "fetch": "^1.1.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "web3": "^1.0.0-beta.55"
   },
   "dependencies": {
